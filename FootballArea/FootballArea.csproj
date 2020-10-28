@@ -61,12 +61,15 @@
     <Compile Include="Area_Dashboard.Designer.cs">
       <DependentUpon>Area_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePageDashboard.cs">
+    <Compile Include="..\..\..\..\Desktop\HomePageDashboard.cs">
       <SubType>Form</SubType>
+      <Link>HomePageDashboard.cs</Link>
     </Compile>
-    <Compile Include="HomePageDashboard.Designer.cs">
+    <Compile Include="..\..\..\..\Desktop\HomePageDashboard.Designer.cs">
       <DependentUpon>HomePageDashboard.cs</DependentUpon>
+      <Link>HomePageDashboard.Designer.cs</Link>
     </Compile>
+    <Compile Include="Extensions.cs" />
     <Compile Include="Models\Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -97,7 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Reserve.cs">
+    <Compile Include="Models\Reservation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Rooms.cs">
@@ -114,17 +117,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sign_İn_Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sign_İn_Dashboard.Designer.cs">
-      <DependentUpon>Sign_İn_Dashboard.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Area_Dashboard.resx">
       <DependentUpon>Area_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePageDashboard.resx">
+    <EmbeddedResource Include="..\..\..\..\Desktop\HomePageDashboard.resx">
       <DependentUpon>HomePageDashboard.cs</DependentUpon>
+      <Link>HomePageDashboard.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Sign_Up_Dashboard.resx">
       <DependentUpon>Sign_Up_Dashboard.cs</DependentUpon>
@@ -139,9 +137,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sign_İn_Dashboard.resx">
-      <DependentUpon>Sign_İn_Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -193,7 +188,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -205,6 +199,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background2.jpg" />
+    <None Include="Resources\thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

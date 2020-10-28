@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtgTo = new System.Windows.Forms.DateTimePicker();
+            this.dtgFrom = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbRoomNumber = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbAreaNumber = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbAreaName = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,17 +59,18 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.lblError);
+            this.panel1.Controls.Add(this.lblPrice);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtgTo);
+            this.panel1.Controls.Add(this.dtgFrom);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.cmbRoomNumber);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cmbAreaNumber);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbAreaName);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtLastname);
             this.panel1.Controls.Add(this.label4);
@@ -84,16 +86,27 @@
             this.panel1.Size = new System.Drawing.Size(908, 733);
             this.panel1.TabIndex = 0;
             // 
-            // label11
+            // lblError
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label11.Location = new System.Drawing.Point(502, 430);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 31);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Price";
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(44, 635);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(76, 31);
+            this.lblError.TabIndex = 29;
+            this.lblError.Text = "Price";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPrice.ForeColor = System.Drawing.Color.LawnGreen;
+            this.lblPrice.Location = new System.Drawing.Point(502, 430);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(76, 31);
+            this.lblPrice.TabIndex = 28;
+            this.lblPrice.Text = "Price";
             // 
             // label10
             // 
@@ -117,19 +130,19 @@
             this.label9.TabIndex = 26;
             this.label9.Text = "From:";
             // 
-            // dateTimePicker2
+            // dtgTo
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(174, 560);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(223, 22);
-            this.dateTimePicker2.TabIndex = 25;
+            this.dtgTo.Location = new System.Drawing.Point(174, 560);
+            this.dtgTo.Name = "dtgTo";
+            this.dtgTo.Size = new System.Drawing.Size(223, 22);
+            this.dtgTo.TabIndex = 25;
             // 
-            // dateTimePicker1
+            // dtgFrom
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(174, 498);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(223, 22);
-            this.dateTimePicker1.TabIndex = 24;
+            this.dtgFrom.Location = new System.Drawing.Point(174, 498);
+            this.dtgFrom.Name = "dtgFrom";
+            this.dtgFrom.Size = new System.Drawing.Size(223, 22);
+            this.dtgFrom.TabIndex = 24;
             // 
             // label8
             // 
@@ -142,14 +155,14 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Date:";
             // 
-            // comboBox3
+            // cmbRoomNumber
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(508, 333);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(356, 33);
-            this.comboBox3.TabIndex = 22;
+            this.cmbRoomNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbRoomNumber.FormattingEnabled = true;
+            this.cmbRoomNumber.Location = new System.Drawing.Point(508, 333);
+            this.cmbRoomNumber.Name = "cmbRoomNumber";
+            this.cmbRoomNumber.Size = new System.Drawing.Size(356, 33);
+            this.cmbRoomNumber.TabIndex = 22;
             // 
             // label7
             // 
@@ -162,14 +175,14 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Room number:";
             // 
-            // comboBox2
+            // cmbAreaNumber
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(508, 236);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(356, 33);
-            this.comboBox2.TabIndex = 20;
+            this.cmbAreaNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbAreaNumber.FormattingEnabled = true;
+            this.cmbAreaNumber.Location = new System.Drawing.Point(508, 236);
+            this.cmbAreaNumber.Name = "cmbAreaNumber";
+            this.cmbAreaNumber.Size = new System.Drawing.Size(356, 33);
+            this.cmbAreaNumber.TabIndex = 20;
             // 
             // label6
             // 
@@ -182,14 +195,15 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Area number:";
             // 
-            // comboBox1
+            // cmbAreaName
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(508, 141);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(356, 33);
-            this.comboBox1.TabIndex = 18;
+            this.cmbAreaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbAreaName.FormattingEnabled = true;
+            this.cmbAreaName.Location = new System.Drawing.Point(508, 141);
+            this.cmbAreaName.Name = "cmbAreaName";
+            this.cmbAreaName.Size = new System.Drawing.Size(356, 33);
+            this.cmbAreaName.TabIndex = 18;
+            this.cmbAreaName.SelectedIndexChanged += new System.EventHandler(this.cmbAreaName_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -254,6 +268,7 @@
             this.btnReserve.TabIndex = 12;
             this.btnReserve.Text = "Reserve";
             this.btnReserve.UseVisualStyleBackColor = false;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // label2
             // 
@@ -294,6 +309,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -305,6 +321,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Area_Dashboard
             // 
@@ -318,7 +335,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Area_Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Area_Dashboard";
+            this.Load += new System.EventHandler(this.Area_Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -336,22 +355,23 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFirstname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtgTo;
+        private System.Windows.Forms.DateTimePicker dtgFrom;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbRoomNumber;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbAreaNumber;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbAreaName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblError;
     }
 }

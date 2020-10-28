@@ -13,10 +13,10 @@ namespace FootballArea.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FootballAreaDBEntities1 : DbContext
+    public partial class FootballAreaDBEntities : DbContext
     {
-        public FootballAreaDBEntities1()
-            : base("name=FootballAreaDBEntities1")
+        public FootballAreaDBEntities()
+            : base("name=FootballAreaDBEntities")
         {
         }
     
@@ -30,7 +30,7 @@ namespace FootballArea.Models
         public virtual DbSet<CommentForCustomer> CommentForCustomer { get; set; }
         public virtual DbSet<CommentForReserve> CommentForReserve { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<Reserve> Reserve { get; set; }
+        public virtual DbSet<Reservation> Reservation { get; set; }
         public virtual DbSet<Rooms> Rooms { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }

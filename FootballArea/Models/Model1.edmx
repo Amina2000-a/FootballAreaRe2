@@ -47,7 +47,7 @@
           <Property Name="Lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="Reserve">
+        <EntityType Name="Reservation">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -57,7 +57,7 @@
           <Property Name="RoomID" Type="int" Nullable="false" />
           <Property Name="ReserveDateFrom" Type="datetime" Nullable="false" />
           <Property Name="ReserveDateTo" Type="datetime" Nullable="false" />
-          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="Rooms">
           <Key>
@@ -102,38 +102,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserve_Areas1">
+        <Association Name="FK_Reservation_Areas">
           <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
-          <End Role="Reserve" Type="Self.Reserve" Multiplicity="*" />
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Areas">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Reserve">
+            <Dependent Role="Reservation">
               <PropertyRef Name="AreaID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserve_Customer2">
+        <Association Name="FK_Reservation_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="Reserve" Type="Self.Reserve" Multiplicity="*" />
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Reserve">
+            <Dependent Role="Reservation">
               <PropertyRef Name="CustomerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserve_Rooms2">
+        <Association Name="FK_Reservation_Rooms">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
-          <End Role="Reserve" Type="Self.Reserve" Multiplicity="*" />
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rooms">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Reserve">
+            <Dependent Role="Reservation">
               <PropertyRef Name="RoomID" />
             </Dependent>
           </ReferentialConstraint>
@@ -144,7 +144,7 @@
           <EntitySet Name="CommentForCustomer" EntityType="Self.CommentForCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommentForReserve" EntityType="Self.CommentForReserve" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Reserve" EntityType="Self.Reserve" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CommentForCustomer_Customer1" Association="Self.FK_CommentForCustomer_Customer1">
@@ -155,17 +155,17 @@
             <End Role="CommentForCustomer" EntitySet="CommentForCustomer" />
             <End Role="CommentForReserve" EntitySet="CommentForReserve" />
           </AssociationSet>
-          <AssociationSet Name="FK_Reserve_Areas1" Association="Self.FK_Reserve_Areas1">
+          <AssociationSet Name="FK_Reservation_Areas" Association="Self.FK_Reservation_Areas">
             <End Role="Areas" EntitySet="Areas" />
-            <End Role="Reserve" EntitySet="Reserve" />
+            <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK_Reserve_Customer2" Association="Self.FK_Reserve_Customer2">
+          <AssociationSet Name="FK_Reservation_Customer" Association="Self.FK_Reservation_Customer">
             <End Role="Customer" EntitySet="Customer" />
-            <End Role="Reserve" EntitySet="Reserve" />
+            <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK_Reserve_Rooms2" Association="Self.FK_Reserve_Rooms2">
+          <AssociationSet Name="FK_Reservation_Rooms" Association="Self.FK_Reservation_Rooms">
             <End Role="Rooms" EntitySet="Rooms" />
-            <End Role="Reserve" EntitySet="Reserve" />
+            <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -190,7 +190,7 @@
           <Property Name="AreaNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Reserve" Relationship="Self.FK_Reserve_Areas1" FromRole="Areas" ToRole="Reserve" />
+          <NavigationProperty Name="Reservation" Relationship="Self.FK_Reservation_Areas" FromRole="Areas" ToRole="Reservation" />
         </EntityType>
         <EntityType Name="CommentForCustomer">
           <Key>
@@ -219,9 +219,9 @@
           <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="CommentForCustomer" Relationship="Self.FK_CommentForCustomer_Customer1" FromRole="Customer" ToRole="CommentForCustomer" />
-          <NavigationProperty Name="Reserve" Relationship="Self.FK_Reserve_Customer2" FromRole="Customer" ToRole="Reserve" />
+          <NavigationProperty Name="Reservation" Relationship="Self.FK_Reservation_Customer" FromRole="Customer" ToRole="Reservation" />
         </EntityType>
-        <EntityType Name="Reserve">
+        <EntityType Name="Reservation">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -231,10 +231,10 @@
           <Property Name="RoomID" Type="Int32" Nullable="false" />
           <Property Name="ReserveDateFrom" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ReserveDateTo" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Areas" Relationship="Self.FK_Reserve_Areas1" FromRole="Reserve" ToRole="Areas" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK_Reserve_Customer2" FromRole="Reserve" ToRole="Customer" />
-          <NavigationProperty Name="Rooms" Relationship="Self.FK_Reserve_Rooms2" FromRole="Reserve" ToRole="Rooms" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="Areas" Relationship="Self.FK_Reservation_Areas" FromRole="Reservation" ToRole="Areas" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Reservation_Customer" FromRole="Reservation" ToRole="Customer" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK_Reservation_Rooms" FromRole="Reservation" ToRole="Rooms" />
         </EntityType>
         <EntityType Name="Rooms">
           <Key>
@@ -244,7 +244,7 @@
           <Property Name="RoomNumber" Type="Int32" />
           <Property Name="PersonCount" Type="Int32" />
           <Property Name="RoomPrice" Type="Int32" />
-          <NavigationProperty Name="Reserve" Relationship="Self.FK_Reserve_Rooms2" FromRole="Rooms" ToRole="Reserve" />
+          <NavigationProperty Name="Reservation" Relationship="Self.FK_Reservation_Rooms" FromRole="Rooms" ToRole="Reservation" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -256,14 +256,14 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Reserve_Areas1">
+        <Association Name="FK_Reservation_Areas">
           <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
-          <End Role="Reserve" Type="Self.Reserve" Multiplicity="*" />
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Areas">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Reserve">
+            <Dependent Role="Reservation">
               <PropertyRef Name="AreaID" />
             </Dependent>
           </ReferentialConstraint>
@@ -292,42 +292,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserve_Customer2">
+        <Association Name="FK_Reservation_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="Reserve" Type="Self.Reserve" Multiplicity="*" />
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Reserve">
+            <Dependent Role="Reservation">
               <PropertyRef Name="CustomerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserve_Rooms2">
+        <Association Name="FK_Reservation_Rooms">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
-          <End Role="Reserve" Type="Self.Reserve" Multiplicity="*" />
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rooms">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Reserve">
+            <Dependent Role="Reservation">
               <PropertyRef Name="RoomID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FootballAreaDBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FootballAreaDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admin" EntityType="Self.Admin" />
           <EntitySet Name="Areas" EntityType="Self.Areas" />
           <EntitySet Name="CommentForCustomer" EntityType="Self.CommentForCustomer" />
           <EntitySet Name="CommentForReserve" EntityType="Self.CommentForReserve" />
           <EntitySet Name="Customer" EntityType="Self.Customer" />
-          <EntitySet Name="Reserve" EntityType="Self.Reserve" />
+          <EntitySet Name="Reservation" EntityType="Self.Reservation" />
           <EntitySet Name="Rooms" EntityType="Self.Rooms" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK_Reserve_Areas1" Association="Self.FK_Reserve_Areas1">
+          <AssociationSet Name="FK_Reservation_Areas" Association="Self.FK_Reservation_Areas">
             <End Role="Areas" EntitySet="Areas" />
-            <End Role="Reserve" EntitySet="Reserve" />
+            <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
           <AssociationSet Name="FK_CommentForCustomer_Customer1" Association="Self.FK_CommentForCustomer_Customer1">
             <End Role="Customer" EntitySet="Customer" />
@@ -337,13 +337,13 @@
             <End Role="CommentForCustomer" EntitySet="CommentForCustomer" />
             <End Role="CommentForReserve" EntitySet="CommentForReserve" />
           </AssociationSet>
-          <AssociationSet Name="FK_Reserve_Customer2" Association="Self.FK_Reserve_Customer2">
+          <AssociationSet Name="FK_Reservation_Customer" Association="Self.FK_Reservation_Customer">
             <End Role="Customer" EntitySet="Customer" />
-            <End Role="Reserve" EntitySet="Reserve" />
+            <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK_Reserve_Rooms2" Association="Self.FK_Reserve_Rooms2">
+          <AssociationSet Name="FK_Reservation_Rooms" Association="Self.FK_Reservation_Rooms">
             <End Role="Rooms" EntitySet="Rooms" />
-            <End Role="Reserve" EntitySet="Reserve" />
+            <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -351,7 +351,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище FootballAreaDBModelContainer" CdmEntityContainer="FootballAreaDBEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище FootballAreaDBModelContainer" CdmEntityContainer="FootballAreaDBEntities">
           <EntitySetMapping Name="Admin">
             <EntityTypeMapping TypeName="FootballAreaDBModel.Admin">
               <MappingFragment StoreEntitySet="Admin">
@@ -399,9 +399,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Reserve">
-            <EntityTypeMapping TypeName="FootballAreaDBModel.Reserve">
-              <MappingFragment StoreEntitySet="Reserve">
+          <EntitySetMapping Name="Reservation">
+            <EntityTypeMapping TypeName="FootballAreaDBModel.Reservation">
+              <MappingFragment StoreEntitySet="Reservation">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="AreaID" ColumnName="AreaID" />

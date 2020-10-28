@@ -18,7 +18,7 @@ namespace FootballArea.Models
         public Customer()
         {
             this.CommentForCustomer = new HashSet<CommentForCustomer>();
-            this.Reserve = new HashSet<Reserve>();
+            this.Reservation = new HashSet<Reservation>();
         }
     
         public int ID { get; set; }
@@ -29,6 +29,7 @@ namespace FootballArea.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CommentForCustomer> CommentForCustomer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reserve> Reserve { get; set; }
+        public virtual ICollection<Reservation> Reservation { get; set; }
+        public string Password { get; internal set; }
     }
 }

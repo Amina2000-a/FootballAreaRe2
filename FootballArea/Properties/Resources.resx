@@ -121,6 +121,9 @@
   <data name="thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="football_player_PNG29" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\football_player_PNG29.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,6 +136,9 @@
   <data name="unnamed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unnamed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,7 +148,7 @@
   <data name="green-light-line-shadow-on-black-blank-space-background_33869-663" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green-light-line-shadow-on-black-blank-space-background_33869-663.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

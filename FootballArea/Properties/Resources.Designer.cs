@@ -144,6 +144,28 @@ namespace FootballArea.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap thumb2_black_stylish_background_green_neon_lines_green_light_effects_abstract_black_background1 {
+            get {
+                object obj = ResourceManager.GetObject("thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-bla" +
+                        "ck-background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thumb2_black_stylish_background_green_neon_lines_green_light_effects_abstract_black_background2 {
+            get {
+                object obj = ResourceManager.GetObject("thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-bla" +
+                        "ck-background2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap unnamed {
             get {
                 object obj = ResourceManager.GetObject("unnamed", resourceCulture);
